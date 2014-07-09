@@ -4,7 +4,7 @@ Serial myPort;
 String val = "a";
 
 //for game use
-int x=325, bully=445, bullx=x+25, speed=0;
+int sx=325, bully=445, bullx=sx+25, speed=0;
 tank t = new tank(325);
 int gx = (int)random(25,675), gy=50, tempx, tempy=50, lands=0;
 int score=0;
@@ -25,14 +25,14 @@ class tank {
   
   
    tank(int tempx){
-    x=tempx; 
+    sx=tempx; 
    }
 
 void make() {
  fill(0,0,0); 
- rect(x,480,50,30);
- rect(x+15,460,20,20);
- rect(x+23,440,4,30);
+ rect(sx,480,50,30);
+ rect(sx+15,460,20,20);
+ rect(sx+23,440,4,30);
   } 
   
   
@@ -48,10 +48,10 @@ void draw() {
    if (play == true) {
    
    t.make();
-   if(val.charAt(0) == 'R'&&x<width-50){x+=moveSp;}
-   else if(val.charAt(0) == 'L'&&x>0){x-=moveSp;}
+   if(val.charAt(0) == 'R'&&sx<width-50){sx+=moveSp;}
+   else if(val.charAt(0) == 'L'&&sx>0){sx-=moveSp;}
   //bullet
-  if(bully==445)bullx=x+25;
+  if(bully==445)bullx=sx+25;
    noFill();
    ellipse(bullx,bully,4,4);
 
